@@ -41,7 +41,7 @@ namespace GlobalizationLab.Controllers
             ProductModel model = new ProductModel();
             model.CreateDate = DateTime.Now;
             model.CreateDateTime = DateTime.Now;
-            model.CreateDateTimeNullable = DateTime.Now;
+            model.CreateDateTimeNullable = new DateTime(2014, 12, 30);
             model.Id = 1;
             model.Price = 12345678.98765D;
             model.PricedDecmial = 12345678.01543M;

@@ -25,7 +25,7 @@ namespace GlobalizationLab
             string cultureName = Request["cultureName"];
             if (string.IsNullOrEmpty(cultureName))
             {
-                System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.CreateSpecificCulture("zh-TW");
+                System.Threading.Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("zh-TW");
                 System.Threading.Thread.CurrentThread.CurrentUICulture = System.Threading.Thread.CurrentThread.CurrentCulture;
                 return;
             }
@@ -33,10 +33,10 @@ namespace GlobalizationLab
             //System.Threading.Thread.CurrentThread.CurrentUICulture = new CultureInfo(cultureName);
 
             if (cultureName.StartsWith("en-"))
-                System.Threading.Thread.CurrentThread.CurrentCulture = new CultureInfo("en");
+                System.Threading.Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("en");
             else
-                System.Threading.Thread.CurrentThread.CurrentCulture = new CultureInfo(cultureName);
-            System.Threading.Thread.CurrentThread.CurrentUICulture = new CultureInfo(cultureName);
+                System.Threading.Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo(cultureName);
+            System.Threading.Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo(cultureName);
         }
         protected void Application_Start()
         {

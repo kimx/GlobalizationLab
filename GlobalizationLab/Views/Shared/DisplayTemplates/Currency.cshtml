@@ -1,16 +1,17 @@
 ﻿@model System.Object
 @*http://msdn.microsoft.com/zh-tw/library/0c899ak8(v=vs.110).aspx*@
-@if (Model!=null)
+@if (Model != null)
 {
     double value = Convert.ToDouble(Model);
-    
+    System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("en");
+    culture.NumberFormat.CurrencySymbol = "R";
     if (ViewData.Keys.Contains("digit"))
     {
-        @:R @value.ToString("N" + Convert.ToInt32(ViewData["digit"]), new System.Globalization.CultureInfo("en-GB"))
+       @value.ToString("C" + Convert.ToInt32(ViewData["digit"]), culture)
     }
     else
     {
-        @:R @value.ToString("N2", new System.Globalization.CultureInfo("en-GB"))
+       @value.ToString("C2", culture)
     }
 
 }
