@@ -1,0 +1,31 @@
+﻿@model GlobalizationLab.Models.DateModel
+@{
+    ViewBag.Title = "Index";
+
+}
+<h2>DateValidate</h2>
+@using (Html.BeginForm())
+{
+    @Html.Hidden("cultureName", System.Threading.Thread.CurrentThread.CurrentCulture.Name)
+
+    <div class="form-horizontal">
+        <h4>Date Format</h4>
+        <hr />
+
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.Label("*Editor date", new { @class = "control-label col-md-3" })
+            <div class="col-md-9">
+                @*@Html.TextBox("CreateDate", Model.CreateDate.ToString("yyyy-MM-dd"), new { type = "date" })*@
+                @Html.TextBox("CreateDate", Model.CreateDate.ToString("d"))
+                @Html.ValidationMessageFor(model => model.CreateDate)
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-10">
+                <button type="submit">Send</button>
+            </div>
+        </div>
+    </div>
+}

@@ -1,0 +1,80 @@
+﻿@model GlobalizationLab.Models.ProductModel
+@{
+    ViewBag.Title = "Price";
+}
+
+<h2>Price</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            @using (Html.BeginForm())
+            {
+                @Html.Hidden("cultureName", System.Threading.Thread.CurrentThread.CurrentCulture.Name)
+                <div class="form-horizontal">
+                    <hr />
+                    <div class="form-group">
+                        <div>double.MinValue: @double.MinValue</div>
+                        <div>double.MaxValue: @double.MaxValue</div>
+                        <div>decimal.MinValue: @decimal.MinValue</div>
+                        <div>decimal.MaxValue: @decimal.MaxValue</div>
+                    </div>
+                    @Html.ValidationSummary(true)
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Price, new { @class = "control-label col-md-3" })
+                        <div class="col-md-9">
+                            @Html.EditorFor(model => model.Price)
+                            @Html.ValidationMessageFor(model => model.Price)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.PricedDecmial, new { @class = "control-label col-md-3" })
+                        <div class="col-md-9">
+                            @Html.TextBoxFor(model => model.PricedDecmial)
+                            @Html.ValidationMessageFor(model => model.PricedDecmial)
+                            <span>@Model.PricedDecmial</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.Label("Only Display N", new { @class = "control-label col-md-3" })
+                        <div class="col-md-9">
+                            @Html.TextBox("Price-N", Model.Price.ToString("N"))
+                            <span>@Model.Price.ToString("N")</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.Label("Only Display N4", new { @class = "control-label col-md-3" })
+                        <div class="col-md-9">
+                            @Html.TextBox("Price-N4", Model.Price.ToString("N4"))
+                            <span>@Model.Price.ToString("N4")</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.Label("Only Display NumberDecimalDigits ", new { @class = "control-label col-md-3" })
+                        <div class="col-md-9">
+                            @Html.TextBox("Price-NumberDecimalDigits ", Model.Price.ToString("N", System.Threading.Thread.CurrentThread.CurrentCulture.NumberFormat))
+                            <span>@Model.Price.ToString("N", System.Threading.Thread.CurrentThread.CurrentCulture.NumberFormat)</span>
+                            <div>@System.Threading.Thread.CurrentThread.CurrentCulture.NumberFormat.CurrencyDecimalDigits</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Qty, new { @class = "control-label col-md-3" })
+                        <div class="col-md-9">
+                            @Html.TextBoxFor(model => model.Qty)
+                            @Html.ValidationMessageFor(model => model.Qty)
+                        </div>
+                    </div>
+                    <div class="form-group">
+
+                        <div class="col-md-10">
+                            <button type="submit">Send</button>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            }
+        </div>
+
+    </div>
+</div>

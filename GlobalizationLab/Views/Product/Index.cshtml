@@ -1,0 +1,117 @@
+﻿@model GlobalizationLab.Models.ProductModel
+@{
+    ViewBag.Title = "Index";
+   
+}
+    
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            @using (Html.BeginForm())
+            {
+               
+                <div class="form-horizontal">
+                <h4>Date Format</h4>
+                <hr />
+ 
+                @Html.ValidationSummary(true)
+                <div class="form-group">
+                    @Html.LabelFor(model => model.CreateDate, new { @class = "control-label col-md-3" })
+                    <div class="col-md-9">
+                        @Html.EditorFor(model => model.CreateDate)
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.Label("d", new { @class = "control-label col-md-3" })
+                    <div class="col-md-9">
+                        @Html.TextBox("CreateDate-d", Model.CreateDate.ToString("d"), new { type = "date" })
+                        <span>@Model.CreateDate.ToString("d")</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.Label("*Editor date", new { @class = "control-label col-md-3" })
+                    <div class="col-md-9">
+                        @Html.TextBox("CreateDate-yyyy-MM-dd", Model.CreateDate.ToString("yyyy-MM-dd"), new { type = "date" })
+                        <span>@Model.CreateDate.ToString("yyyy-MM-dd")</span>
+                        @Html.ValidationMessageFor(model => model.CreateDate)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <span class="control-label col-md-3">
+                        @System.Threading.Thread.CurrentThread.CurrentCulture.DateTimeFormat.ShortDatePattern
+                    </span>
+                    <div class="col-md-9">
+                        @Html.TextBox("CreateDate-yyyy-MM-dd", Model.CreateDate.ToString(System.Threading.Thread.CurrentThread.CurrentCulture.DateTimeFormat), new { type = "date" })
+                        <span>@Model.CreateDate.ToString(System.Threading.Thread.CurrentThread.CurrentCulture.DateTimeFormat.ShortDatePattern)</span>
+                    </div>
+                </div>
+                <div class="form-group">
+         
+                    <div class="col-md-10">
+                        <button type="submit">Send</button>
+                    </div>
+                </div>
+
+
+                @*<div class="form-group">
+                        @Html.LabelFor(model => model.Price, new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Price)
+                            @Html.ValidationMessageFor(model => model.Price)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.PriceString, new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.PriceString)
+                            @Html.ValidationMessageFor(model => model.PriceString)
+                        </div>
+                    </div>*@
+
+            </div>
+            }
+        </div>
+        <div class="col-lg-6">
+            <div class="form-horizontal">
+                <h4>DateTime Format</h4>
+                <hr />
+       
+                @Html.ValidationSummary(true)
+                <div class="form-group">
+                    @Html.LabelFor(model => model.CreateDateTime, new { @class = "control-label col-md-3" })
+                    <div class="col-md-9">
+                        @Html.EditorFor(model => model.CreateDateTime)
+                        @Html.ValidationMessageFor(model => model.CreateDateTime)
+                        @Html.DisplayFor(model => model.CreateDateTime)
+
+
+                    </div>
+                </div>
+            
+                <div class="form-group">
+                    @Html.Label("*Editor datetime-local", new { @class = "control-label col-md-3" })
+                    <div class="col-md-9">
+                  
+                        @Html.TextBox("CreateDate-yyyy-MM-dd HH:mm", Model.CreateDateTime.ToString("yyyy-MM-ddTHH:mm:ss"), new { type = "datetime-local" })
+                        <span>@Model.CreateDateTime.ToString("yyyy-MM-ddTHH:mm:ss")</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <span class="control-label col-md-3">
+                        @System.Threading.Thread.CurrentThread.CurrentCulture.DateTimeFormat.LongDatePattern
+                    </span>
+                    <div class="col-md-9">
+                        @Html.TextBox("CreateDate-yyyy-MM-dd", Model.CreateDate.ToString(System.Threading.Thread.CurrentThread.CurrentCulture.DateTimeFormat.FullDateTimePattern), new { type = "datetime" })
+                        <span>@Model.CreateDate.ToString(System.Threading.Thread.CurrentThread.CurrentCulture.DateTimeFormat.FullDateTimePattern)</span>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<p>  datetime-local has remove from w3c  https://twitter.com/html5/status/433038890937901056 </p>

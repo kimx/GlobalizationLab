@@ -1,0 +1,14 @@
+﻿@model System.Double?
+@*http://msdn.microsoft.com/zh-tw/library/0c899ak8(v=vs.110).aspx*@
+@if (Model.HasValue)
+{
+    if (ViewData.Keys.Contains("digit"))
+    {
+        @:R @Model.Value.ToString("N" + Convert.ToInt32(ViewData["digit"]), new System.Globalization.CultureInfo("en-GB"))
+    }
+    else
+    {
+        @:R @Model.Value.ToString("N2", new System.Globalization.CultureInfo("en-GB"))
+    }
+
+}
