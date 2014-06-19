@@ -31,6 +31,7 @@ namespace GlobalizationLab.Models
         //  [Range(double.MinValue, double.MaxValue, ErrorMessageResourceName = "數值不對", ErrorMessageResourceType = typeof(Resources.Resources))]
         public double Price { get; set; }
 
+        [DataType(DataType.Currency)]
         [Required(ErrorMessageResourceName = "數值不對", ErrorMessageResourceType = typeof(Resources.Resources))]
         //  [Range(typeof(decimal), "-79228162514264337593543950335", "79228162514264337593543950335", ErrorMessageResourceName = "數值不對", ErrorMessageResourceType = typeof(Resources.Resources))]
         public decimal PricedDecmial { get; set; }
