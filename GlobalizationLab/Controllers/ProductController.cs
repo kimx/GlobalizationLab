@@ -45,7 +45,7 @@ namespace GlobalizationLab.Controllers
             model.Id = 1;
             model.Price = 12345678.98765D;
             model.PricedDecmial = 12345678.01543M;
-            model.ProductName = "iPhone5s";
+            model.ProductName = ""; ;
             return model;
         }
 

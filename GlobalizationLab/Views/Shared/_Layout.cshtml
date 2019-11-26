@@ -40,13 +40,13 @@
                 {
 
                     List<System.Globalization.CultureInfo> cultures = new List<System.Globalization.CultureInfo>();
-                    cultures.Add(System.Globalization.CultureInfo.CreateSpecificCulture("zh-CN"));
                     cultures.Add(System.Globalization.CultureInfo.CreateSpecificCulture("zh-TW"));
-                    //cultures.Add(System.Globalization.CultureInfo.CreateSpecificCulture("en-US"));
+                    cultures.Add(System.Globalization.CultureInfo.CreateSpecificCulture("zh-CN"));
+                    cultures.Add(System.Globalization.CultureInfo.CreateSpecificCulture("en-US"));
                     cultures.Add(System.Globalization.CultureInfo.CreateSpecificCulture("en-ZA"));
 
                     //cultures.Add(System.Globalization.CultureInfo.CreateSpecificCulture("af-ZA"));
-                    cultures.Add(System.Globalization.CultureInfo.CreateSpecificCulture("en-GB"));
+                    //cultures.Add(System.Globalization.CultureInfo.CreateSpecificCulture("en-GB"));
 
                     <div class="col-lg-3">@Html.DropDownList("cultureName", new SelectList(cultures, "Name", "DisplayName"))</div>
                     <div class="col-lg-*"><button type="submit">Change</button></div>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GlobalizationLab.App_GlobalResources;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -17,9 +18,10 @@ namespace GlobalizationLab.Core
             : base(metadata, context, attribute)
         {
             if (attribute.ErrorMessageResourceType == null)
-                attribute.ErrorMessageResourceType = typeof(Resources.Resources);
+                attribute.ErrorMessageResourceType = typeof(Resources);
             if (attribute.ErrorMessageResourceName == null)
                 attribute.ErrorMessageResourceName = "PropertyValueRequired";
+          
         }
     
     

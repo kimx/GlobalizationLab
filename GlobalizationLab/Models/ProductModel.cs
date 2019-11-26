@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GlobalizationLab.App_GlobalResources;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -15,6 +16,7 @@ namespace GlobalizationLab.Models
         public int Id { get; set; }
 
         [Required]
+        [Display(Name = "MyName", ResourceType = typeof(Resources))]
         public string ProductName { get; set; }
 
         [DataType(DataType.Date)]
@@ -26,13 +28,13 @@ namespace GlobalizationLab.Models
         public DateTime? CreateDateTimeNullable { get; set; }
 
         [DataType(DataType.Currency)]
-        [Required(ErrorMessageResourceName = "數值不對", ErrorMessageResourceType = typeof(Resources.Resources))]
+        [Required(ErrorMessageResourceName = "數值不對", ErrorMessageResourceType = typeof(Resources))]
 
         //  [Range(double.MinValue, double.MaxValue, ErrorMessageResourceName = "數值不對", ErrorMessageResourceType = typeof(Resources.Resources))]
         public double Price { get; set; }
 
         [DataType(DataType.Currency)]
-        [Required(ErrorMessageResourceName = "數值不對", ErrorMessageResourceType = typeof(Resources.Resources))]
+        [Required(ErrorMessageResourceName = "數值不對", ErrorMessageResourceType = typeof(Resources))]
         //  [Range(typeof(decimal), "-79228162514264337593543950335", "79228162514264337593543950335", ErrorMessageResourceName = "數值不對", ErrorMessageResourceType = typeof(Resources.Resources))]
         public decimal PricedDecmial { get; set; }
 

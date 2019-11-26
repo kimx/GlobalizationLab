@@ -123,6 +123,9 @@
   <data name="FieldMustBeNumeric" xml:space="preserve">
     <value>栏位 {0} 必须是数字。</value>
   </data>
+  <data name="MyName" xml:space="preserve">
+    <value>My name 是簡体</value>
+  </data>
   <data name="PropertyValueInvalid" xml:space="preserve">
     <value>值'{0}“是无效的{1}。</value>
   </data>

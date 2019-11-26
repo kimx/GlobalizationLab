@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GlobalizationLab.App_GlobalResources;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -18,7 +19,7 @@ namespace GlobalizationLab.Core
 
             foreach (var attr in items.OfType<ValidationAttribute>())
             {
-                attr.ErrorMessageResourceType = typeof(Resources.Resources);
+                attr.ErrorMessageResourceType = typeof(Resources);
                 attr.ErrorMessageResourceName="PropertyValueRequired";
                 continue;
             }
