@@ -28,7 +28,7 @@ namespace GlobalizationLab.Models
         public DateTime? CreateDateTimeNullable { get; set; }
 
         [DataType(DataType.Currency)]
-        [Required(ErrorMessageResourceName = "數值不對", ErrorMessageResourceType = typeof(Resources))]
+        [Required(ErrorMessageResourceName = "數值不對")]
 
         //  [Range(double.MinValue, double.MaxValue, ErrorMessageResourceName = "數值不對", ErrorMessageResourceType = typeof(Resources.Resources))]
         public double Price { get; set; }

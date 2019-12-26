@@ -33,7 +33,7 @@ namespace GlobalizationLab
             //System.Threading.Thread.CurrentThread.CurrentUICulture = new CultureInfo(cultureName);
 
             if (cultureName.StartsWith("en-"))
-                System.Threading.Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("en");
+                System.Threading.Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("en-US");
             else
                 System.Threading.Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo(cultureName);
             System.Threading.Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo(cultureName);

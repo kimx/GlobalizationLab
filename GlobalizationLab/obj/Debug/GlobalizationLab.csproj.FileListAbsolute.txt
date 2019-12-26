@@ -154,3 +154,4 @@ D:\GitHub\GlobalizationLab\GlobalizationLab\obj\Debug\GlobalizationLab.App_Globa
 D:\GitHub\GlobalizationLab\GlobalizationLab\obj\Debug\GlobalizationLab.csproj.GenerateResource.cache
 D:\GitHub\GlobalizationLab\GlobalizationLab\obj\Debug\en-us\GlobalizationLab.resources.dll
 D:\GitHub\GlobalizationLab\GlobalizationLab\obj\Debug\zh-CN\GlobalizationLab.resources.dll
+D:\GitHub\GlobalizationLab\GlobalizationLab\obj\Debug\GlobalizationLab.csprojAssemblyReference.cache
